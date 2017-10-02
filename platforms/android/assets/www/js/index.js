@@ -54,13 +54,15 @@ function initPushwoosh() {
 
 window.addEventListener("message", receiveMessage, false);
 function receiveMessage(event){
-  console.log("ping?")
-  if (event.origin !== "file://") {
-    return;
-    console.log("I GOT YOUR MESSAGE")
-    console.log("event", event)
-    //window.open = cordova.InAppBrowser.open(url, "_system", options);
-  }
+  console.log("ping?", event)
+
+  //if (event.origin !== "file://") {
+  //  return;
+  //  console.log("I GOT YOUR MESSAGE")
+  //  console.log("event", event)
+  console.log("go go go ", event.data)
+  window.open = cordova.InAppBrowser.open(event.data, "_system");
+  //}
 }
 
 var app = {
