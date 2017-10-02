@@ -55,9 +55,11 @@ function initPushwoosh() {
 window.addEventListener("message", receiveMessage, false);
 function receiveMessage(event){
   console.log("ping?")
-  if (event.origin !== "http://labs.sense-studios.com/zoomintv/catinder/") {
+  if (event.origin !== "file://") {
     return;
     console.log("I GOT YOUR MESSAGE")
+    console.log("event", event)
+    //window.open = cordova.InAppBrowser.open(url, "_system", options);
   }
 }
 
