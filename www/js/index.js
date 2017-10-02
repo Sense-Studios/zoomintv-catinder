@@ -55,7 +55,7 @@ function initPushwoosh() {
 window.addEventListener("message", receiveMessage, false);
 function receiveMessage(event){
   console.log("ping?")
-  if (event.origin !== "http://labs.sense-studios.com/zoomintv/catinder/")
+  if (event.origin !== "http://labs.sense-studios.com/zoomintv/catinder/") {
     return;
     console.log("I GOT YOUR MESSAGE")
   }
