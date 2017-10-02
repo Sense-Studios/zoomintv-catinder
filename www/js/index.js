@@ -52,6 +52,15 @@ function initPushwoosh() {
 }
 */
 
+window.addEventListener("message", receiveMessage, false);
+function receiveMessage(event){
+  console.log("ping?")
+  if (event.origin !== "http://labs.sense-studios.com/zoomintv/catinder/")
+    return;
+    console.log("I GOT YOUR MESSAGE")
+  }
+}
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -80,10 +89,9 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
 
-        window.open = cordova.InAppBrowser.open('http://www.google.com', '_system');
-
         // var url = "http://catopia.tv/?source=app"
-        var url = "http://catopia.tv/catinder/"
+        // var url = "http://catopia.tv/catinder/"
+        var url = "http://labs.sense-studios.com/zoomintv/catinder/"
         console.log("load: ", url)
         $.ajax({
             url: url,
@@ -95,6 +103,8 @@ var app = {
                   document.getElementById("content_frame").src = url;
                   document.getElementsByTagName('body')[0].style.backgroundImage = 'url("")'
                   document.getElementsByTagName('body')[0].style.backgroundColor = '#000000'
+
+
                }else{
                   $('#could_not_connect').fadeIn('slow')
                }
@@ -104,6 +114,11 @@ var app = {
         //console.log('now, init push')
         //initPushwoosh();
     },
+
+    openExternal: function( _url ) {
+      window.open = cordova.InAppBrowser.open( _url, '_system');
+    }
+
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
