@@ -115,9 +115,9 @@ var app = {
         //initPushwoosh();
     },
 
-    openExternal: function( _url ) {
-      window.open = cordova.InAppBrowser.open( _url, '_system');
-    }
+    //openExternal: function( _url ) {
+    //  window.open = cordova.InAppBrowser.open( _url, '_system');
+    //}
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
