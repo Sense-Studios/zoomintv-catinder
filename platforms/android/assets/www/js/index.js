@@ -18,6 +18,7 @@
  */
 
 
+/*
 function initPushwoosh() {
   console.log("init puusssh!")
   var pushwoosh = cordova.require("pushwoosh-cordova-plugin.PushNotification");
@@ -49,6 +50,18 @@ function initPushwoosh() {
     }
   );
 }
+*/
+
+window.addEventListener("message", receiveMessage, false);
+function receiveMessage(event){
+  console.log("ping?")
+  if (event.origin !== "file://") {
+    return;
+    console.log("I GOT YOUR MESSAGE")
+    console.log("event", event)
+    //window.open = cordova.InAppBrowser.open(url, "_system", options);
+  }
+}
 
 var app = {
     // Application Constructor
@@ -62,12 +75,12 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         // should be called before pushwoosh.onDeviceReady
-        document.addEventListener('push-notification', function(event) {
-          var notification = event.notification;
+        //document.addEventListener('push-notification', function(event) {
+        //  var notification = event.notification;
           // handle push open here
-          console.log("push has received etwas")
+        //  console.log("push has received etwas")
           // alert("you have received a push event and opens")
-        });
+        //});
 
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
@@ -79,7 +92,8 @@ var app = {
         app.receivedEvent('deviceready');
 
         // var url = "http://catopia.tv/?source=app"
-        var url = "http://catopia.tv/?source=app"        
+        // var url = "http://catopia.tv/catinder/"
+        var url = "http://labs.sense-studios.com/zoomintv/catinder/"
         console.log("load: ", url)
         $.ajax({
             url: url,
@@ -91,15 +105,22 @@ var app = {
                   document.getElementById("content_frame").src = url;
                   document.getElementsByTagName('body')[0].style.backgroundImage = 'url("")'
                   document.getElementsByTagName('body')[0].style.backgroundColor = '#000000'
+
+
                }else{
                   $('#could_not_connect').fadeIn('slow')
                }
             }
         });
 
-        console.log('now, init push')
-        initPushwoosh();
+        //console.log('now, init push')
+        //initPushwoosh();
     },
+
+    //openExternal: function( _url ) {
+    //  window.open = cordova.InAppBrowser.open( _url, '_system');
+    //}
+
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
