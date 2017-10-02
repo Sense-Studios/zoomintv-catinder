@@ -80,6 +80,8 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
 
+        window.open = cordova.InAppBrowser.open('http://www.google.com', '_system');
+
         // var url = "http://catopia.tv/?source=app"
         var url = "http://catopia.tv/catinder/"
         console.log("load: ", url)
