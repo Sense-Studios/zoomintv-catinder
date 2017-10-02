@@ -20,7 +20,8 @@
     <!-- external plugins -->
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <plugin name="cordova-plugin-statusbar" source="npm" />
-    <plugin name="pushwoosh-cordova-plugin" source="npm" />
+    <!-- <plugin name="pushwoosh-cordova-plugin" source="npm" /> -->
+    <plugin name="cordova-plugin-inappbrowser" source="npm" />
 
     <!-- preferences -->
     <preference name="permissions" value="none" />
