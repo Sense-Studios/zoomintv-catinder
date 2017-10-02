@@ -60,7 +60,8 @@ function receiveMessage(event){
   //  return;
   //  console.log("I GOT YOUR MESSAGE")
   //  console.log("event", event)
-    //window.open = cordova.InAppBrowser.open(url, "_system", options);
+  console.log("go go go ", event.data)
+  window.open = cordova.InAppBrowser.open(event.data, "_system");
   //}
 }
 
