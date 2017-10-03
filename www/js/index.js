@@ -94,8 +94,8 @@ var app = {
         app.receivedEvent('deviceready');
 
         // var url = "http://catopia.tv/?source=app"
-        var url = "http://catopia.tv/catinder/"
-        //var url = "http://labs.sense-studios.com/zoomintv/catinder/"
+        // var url = "http://labs.sense-studios.com/zoomintv/catinder/"
+        var url = "http://catopia.tv/catinder/?app=true"
         console.log("load: ", url)
         $.ajax({
             url: url,
