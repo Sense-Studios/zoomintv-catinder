@@ -93,8 +93,8 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
 
-        // var url = "http://catopia.tv/?source=app"
-        var url = "http://labs.sense-studios.com/zoomintv/catinder/?app=true"
+        var url = "http://catopia.tv/?source=app"
+        // var url = "http://labs.sense-studios.com/zoomintv/catinder/?app=true"
         // var url = "http://catopia.tv/catinder/?app=true"
         console.log("load: ", url)
         $.ajax({
